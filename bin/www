@@ -17,16 +17,16 @@ server.listen(app.get('port'), function() {
 
   io.on('connection',function (client) {
 
-    console.log('Client connected');
+    console.log('Client connected',client.id);
 		client.on('disconnect',function () {
-			console.log('User disconnected');
+			console.log('Client disconnected');
 		});
 
 		client.on('join',function (data) {
 			console.log('Client joined: ', data);
 		})
 
-		client.on('emit',function (data) {
+		client.on('data',function (data) {
 			console.log('Client emitted: ', data);
 		})
 
