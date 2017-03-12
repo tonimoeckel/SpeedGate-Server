@@ -1,0 +1,10 @@
+.Header {
+    padding: 50px;
+    z-index: 1100;
+    position: relative;
+}
+
+.Header h1 {
+    color: white;
+    text-align: left;
+}

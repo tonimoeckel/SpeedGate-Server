@@ -1,33 +1,34 @@
 {
-  "name": "speed-gate-emitter",
-  "version": "0.0.1",
+  "name": "speedgate-server",
+  "version": "0.1.0",
   "private": true,
-  "main": "app.js",
-  "scripts": {
-    "start": "node ./bin/www",
-    "test": "mocha --recursive test",
-    "test:coverage": "nyc npm test",
-    "test:unit": "mocha --recursive test/middleware test/models test/routes",
-    "test:integration": "mocha --recursive test/integration"
-  },
   "dependencies": {
-    "body-parser": "^1.13.3",
-    "cookie-parser": "^1.3.3",
-    "express": "^4.13.3",
-    "express-handlebars": "^3.0.0",
-    "morgan": "^1.6.1",
-    "serve-favicon": "^2.3.0",
-    "socket.io": "^1.7.3"
+    "async": "^2.1.5",
+    "axios": "^0.15.3",
+    "body-parser": "^1.17.1",
+    "classnames": "^2.2.5",
+    "express": "^4.15.2",
+    "feathers": "^2.1.1",
+    "feathers-rest": "^1.7.1",
+    "feathers-rethinkdb": "^0.3.7",
+    "formsy-material-ui": "^0.5.5",
+    "formsy-react": "^0.19.2",
+    "material-ui": "^0.17.0",
+    "morgan": "^1.8.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router-dom": "^4.0.0",
+    "react-tap-event-plugin": "^2.0.1",
+    "rethinkdbdash": "^2.3.28"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "debug": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-nodemon": "^2.0.2",
-    "gulp-livereload": "^3.8.0",
-    "gulp-plumber": "^1.0.0",
-    "mocha": "^3.0.2",
-    "nyc": "^10.0.0",
-    "supertest": "^2.0.0"
+    "react-scripts": "^0.9.5"
+  },
+  "proxy": "http://localhost:9000",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

@@ -1,0 +1,11 @@
+form > .div {
+    width: 100%;
+}
+
+.formContainer {
+    padding: 10px;
+}
+
+.Player form > div {
+    width: 100%;
+}
