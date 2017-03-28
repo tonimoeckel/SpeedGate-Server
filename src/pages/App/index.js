@@ -8,9 +8,14 @@ import Challenges from '../Challenges';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import { Socket } from 'react-socket-io';
 
 import { Route, Switch } from 'react-router-dom';
 import './style.css';
+
+const uri = '';
+const options = { transports: ['websocket'] };
+
 
 class App extends Component {
 
@@ -42,8 +47,8 @@ class App extends Component {
     render() {
         const { className } = this.props;
         return (
+        <Socket uri={uri} options={options}>
             <div className={classnames('App', className)}>
-
                 <Drawer open={this.state.open} docked={false} onRequestChange={(open) => this.setState({open})}>
                     <MenuItem onTouchTap={this.handleClose}>Challenges</MenuItem>
                     <MenuItem onTouchTap={this.handleClose}>About</MenuItem>
@@ -53,8 +58,9 @@ class App extends Component {
                 <Route path="/challenges/:id" exact component={Challenge} />
                 <Route path="/about" component={About} />
 
-
             </div>
+        </Socket>
+
 
         );
     }
